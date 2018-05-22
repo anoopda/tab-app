@@ -4,17 +4,15 @@ import {
   View,
   Image
 } from 'react-native';
-import BackButton from '../../components/navButtons/backButton'
-import HeaderLogo from '../../components/navButtons/headerLogo';
-import HamburgerMenu from '../../components/navButtons/hamburgerMenu'
+import HeaderLogo from '../../components/navElements/headerLogo';
 
 export default class IntroView extends Component {
 
-  static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: <HeaderLogo />,
-    headerLeft:  <HamburgerMenu />,
-    headerRight:<View></View>
-  });
+  // static navigationOptions = ({ navigation, screenProps }) => ({
+  //   headerTitle: <HeaderLogo />,
+  //   headerLeft:  <HamburgerMenu />,
+  //   headerRight:<View></View>
+  // });
 
   render() {
     return (

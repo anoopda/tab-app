@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
+  View,
+  Image
 } from 'react-native';
+import { connect } from 'react-redux';
+import { navigateToScreenMainStack } from '../../redux/navigation/actions'
+import { deviceInit } from '../../redux/device/actions';
 
-import AppText from '../../components/appText'
+import Applogo from '../../assets/images/app-logo.png';
+import styles from './styles';
 
-export default class SpashScreeView extends Component {
+class SpashScreenView extends Component {
 
-  componentWillMount(){
-    setTimeout(()=>{
-      this.props.navigation.navigate('HomeDrawerScreen');
-    },1000)
+  componentWillMount() {
+    setTimeout(() => {
+      this.props.deviceInit();
+      this.props.navigateToScreenMainStack('HomeDrawerScreen')
+    }, 1000)
   }
-
-
 
   render() {
     return (
-        <View style={{flex:1,backgroundColor:'green',justifyContent:'center',alignItems:'center'}}>
-                <AppText style={{color:'red'}}>Splash Screen</AppText>
+      <View style={styles.container}>
+        <View style={styles.logoWrapper}>
+          <Image style={styles.logo} source={Applogo} />
         </View>
+      </View>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    projectDetail: state.projectDetail
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    navigateToScreenMainStack: (route) => dispatch(navigateToScreenMainStack(route)),
+    deviceInit:() => dispatch(deviceInit())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpashScreenView)

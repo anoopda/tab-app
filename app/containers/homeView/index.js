@@ -4,18 +4,9 @@ import {
   View
 } from 'react-native';
 
-import BackButton from '../../components/navButtons/backButton'
-import HeaderLogo from '../../components/navButtons/headerLogo';
-import HamburgerMenu from '../../components/navButtons/hamburgerMenu';
+import HeaderLogo from '../../components/navElements/headerLogo';
 
 export default class HomeView extends Component {
-
-  static navigationOptions = ({ navigation, screenProps }) => ({
-    headerTitle: <HeaderLogo />,
-    headerLeft:  <HamburgerMenu  navigation={navigation}/>,
-    headerRight:<View></View>
-  });
-
 
   render() {
     return (

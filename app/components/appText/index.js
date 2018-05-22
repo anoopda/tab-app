@@ -5,6 +5,10 @@ import {
 
 //For font Embedding -------  different for both androiod and iOS --- >>>>>>>>>
 
+
+
+
+
 export default class AppText extends Component {
     render() {
         return (
