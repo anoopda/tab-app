@@ -15,7 +15,7 @@ class SpashScreenView extends Component {
   componentWillMount() {
     setTimeout(() => {
       this.props.deviceInit();
-      this.props.navigateToScreenMainStack('HomeDrawerScreen')
+      this.props.navigateToScreenMainStack('IntroScreen')
     }, 1000)
   }
 

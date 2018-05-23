@@ -4,7 +4,8 @@ import {
   View,
   Image
 } from 'react-native';
-import HeaderLogo from '../../components/navElements/headerLogo';
+import Swiper from '../../components/swiper'
+
 
 export default class IntroView extends Component {
 
@@ -16,9 +17,12 @@ export default class IntroView extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Intro View</Text>
+      <View style={{ flex: 1, justifyContent: 'center',backgroundColor:'red'}}>
+        <Swiper/>
       </View>
     );
   }
 }
+
+
+
